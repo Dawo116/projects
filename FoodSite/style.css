@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/chinese-food-pictures-uke4w2cpc1cn61n9\ \(1\).jpg);
+    background-size: cover; 
+}
+
+.background {
+    background-color: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+}
+
+.background {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.background::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR START */
+
+.header {
+    background-color: red;
+    display: flex;
+    flex: wrap;
+}
+
+.menu-open {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    text-shadow: -5px 5px 10px black;
+    color: white;
+    transition: 0.5s ease-out;
+}
+
+.menu-open:hover {
+    transform: translate(-2px);
+}
+
+.menu-close:hover {
+    transform: translate(-2px);
+}
+
+.menu-close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: -40%;
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 5px 1px 50px black;
+    z-index: 10000;
+    transition: 0.5s all ease;
+}
+
+.nav.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 5px 1px 50px black;
+    z-index: 10000;
+    transition: 0.5s all ease;
+}
+
+.categoriesContainer {
+   margin-top: 50px;
+   min-height: 80%;
+   justify-content: space-evenly;
+   display: flex;
+   flex-direction: column;
+   font-size: 2rem;
+   align-items: center;
+   list-style: none;
+   transition: 0.5s all ease;
+}
+
+.listItem:hover {
+    transition: 0.5s all ease;
+    color: rgb(221, 221, 221);
+}
+
+/* NAVBAR END */
+
+/* CONTENT START */
+
+.recipeWrapper{
+    background-color: rgba(0, 0, 0, 0.678);
+    z-index: 10000;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+
+.recipeBox{
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.863);
+    width: 1000px;
+    height: 800px;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+}
+
+.recipeBox .closeMark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.recipeBox img {
+    padding: 10px;
+    border-radius: 50px;
+    max-width: 450px;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 9;
+}
+
+.recipeBox .recipeName {
+    padding: 10px;
+    font-size: 2rem;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.recipeBox .recipe {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: span 12;
+}
+
+.recipeBox .ingredients {
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 9;
+    grid-row-end: 14;
+}
+
+.ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 480px;
+}
+
+.ingredientItem {
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    height: 40px;
+    background-color: #e0e0e0;
+    transition: 0.3s ease-in-out;
+}
+
+.ingredients {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.ingredientItem:hover {
+    background-color: #7a7a7a;
+    color: white;
+}
+
+.content {
+    width: 100%;
+    margin: 50px 0;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px black;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translate(-5px)
+}
+
+.card > img {
+    width: 80%;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+.card > p {
+    font-size: 1.5rem;
+    padding: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+button {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #000000;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  button:focus,
+  button:hover {
+    color: #ffffff;
+  }
+  
+  button:focus:after,
+  button:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  button:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+.searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.input[type = "text"] {
+    display: block;
+    color: rgb(34, 34, 34);
+    background: linear-gradient(142.99deg, rgba(217, 217, 217, 0.63) 15.53%, rgba(243, 243, 243, 0.63) 88.19%);
+    box-shadow: 0px 12px 24px -1px rgba(0, 0, 0,0.18);
+    border-color: rgba(7, 4, 14, 0);
+    border-radius: 50px;
+    block-size: 20px;
+    margin: 7px auto;
+    padding: 18px 15px;
+    outline: none;
+    text-align: center;
+    width: 500px;
+    height: 4rem;
+    font-size: 30px;
+    transition: 0.5s;
+  }
+  
+  .input[type = "text"]:hover {
+    width: 600px;
+  }
+  
+  .input[type = "text"]:focus {
+    width: 600px;
+  }
+
+/* CONTENT END */
+
+/* FOOTER START */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* FOOTER END */
